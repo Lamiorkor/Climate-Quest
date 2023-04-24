@@ -6,28 +6,28 @@
 
 public abstract class Environment {
 
-    protected String description; //this entails the name of the environment and the continent it's located in
-    protected int temperature;
-    protected int waterLevel;
+    protected String environmentName; //this entails the name of the environment
+    protected double averageTemperature;
+    protected double averageWaterLevel;
 
-    public Environment(String description, int temp, int waterLevel) {
+    public Environment(String environName, double avgTemp, double avgWaterLevel) {
 
-        this.description = description;
-        this.temperature = temp;
-        this.waterLevel = waterLevel;
+        this.environmentName = environName;
+        this.averageTemperature = avgTemp;
+        this.averageWaterLevel = avgWaterLevel;
     }
 
-    public String getDescription() {
-        return description;
+    public String getEnvironmentName() {
+        return environmentName;
     }
 
-    public int getTemperature() {
-        return temperature;
+    public double getAverageTemperature() {
+        return averageTemperature;
     }
 
-    public int getWaterLevel() {
-        return waterLevel;
+    public double getAverageWaterLevel() {
+        return averageWaterLevel;
     }
 
-    public abstract String getEffect();
+    public abstract String getQuestions();
 }
