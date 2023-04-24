@@ -1,6 +1,6 @@
 # Climate-Quest
 
 AUTHORS
-@ Naa Lamiorkor
+@ Naa Lamiorkor Boye
 @ Laurik Sandrine
 @ Ben Charles Abdul
