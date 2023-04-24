@@ -21,4 +21,12 @@ public class Item {
     public void setEffect(String effect) {
         this.effect = effect;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", effect='" + effect + '\'' +
+                '}';
+    }
 }

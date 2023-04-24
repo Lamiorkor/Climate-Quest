@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Player {
     private String name;
     private Environment currentLocation;
@@ -44,5 +46,16 @@ public class Player {
 
     public void setCurrentLocation(Environment currentLocation) {
         this.currentLocation = currentLocation;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", currentLocation=" + currentLocation +
+                ", health=" + health +
+                ", highscore=" + highscore +
+                ", inventory=" + Arrays.toString(inventory) +
+                '}';
     }
 }
