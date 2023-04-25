@@ -1,20 +1,22 @@
 /* This is an abstract class called Environment that 
  * simulates the Environment of our game. 
- * It will have 5 sub-classes; Desert, Rainforest, Tropical, 
+ * It will have 5 subclasses; Desert, Rainforest, Tropical,
  * Temperate, and Tundra.
  */
 
 public abstract class Environment {
 
-    protected String environmentName; //this entails the name of the environment
-    protected double averageTemperature;
-    protected double averageWaterLevel;
+    protected final String environmentName; //this entails the name of the environment
+    protected final double averageTemperature;
+    protected final double averageWaterLevel;
+    protected static int numQuestions;
 
-    public Environment(String environName, double avgTemp, double avgWaterLevel) {
+    public Environment(String environName, double avgTemp, double avgWaterLevel,int numQuestions) {
 
         this.environmentName = environName;
         this.averageTemperature = avgTemp;
         this.averageWaterLevel = avgWaterLevel;
+        Environment.numQuestions =numQuestions;
     }
 
     public String getEnvironmentName() {
@@ -29,5 +31,9 @@ public abstract class Environment {
         return averageWaterLevel;
     }
 
-    public abstract String getQuestions();
+    public static int getNumQuestions() {
+        return numQuestions;
+    }
+
+    public abstract Question getQuestion(int index);
 }

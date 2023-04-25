@@ -1,23 +1,16 @@
-import java.util.Arrays;
-
 public class Player {
     private String name;
     private Environment currentLocation;
     private int health;
-    private int highscore;
+    private int highScore;
     private static final int  MAXHEALTH = 100;
+    protected static final int MINHEALTH = 0;
 
     public Player(String name,Environment currentLocation){
         setName(name);
         setCurrentLocation(currentLocation);
         resetHealth();
-        setHighscore(0);
-    }
-
-    private Item[] inventory;
-
-    public String getName() {
-        return name;
+        setHighScore(0);
     }
 
     public void setName(String name) {
@@ -28,16 +21,16 @@ public class Player {
         return health;
     }
 
+    public static boolean outOfHealth(int health){
+        return (health<=MINHEALTH);
+    }
+
     public void resetHealth() {
         this.health = MAXHEALTH;
     }
 
-    public int getHighscore() {
-        return highscore;
-    }
-
-    public void setHighscore(int highscore) {
-        this.highscore = highscore;
+    public void setHighScore(int highscore) {
+        this.highScore = highscore;
     }
 
     public Environment getCurrentLocation() {
@@ -54,8 +47,7 @@ public class Player {
                 "name='" + name + '\'' +
                 ", currentLocation=" + currentLocation +
                 ", health=" + health +
-                ", highscore=" + highscore +
-                ", inventory=" + Arrays.toString(inventory) +
+                ", highscore=" + highScore +
                 '}';
     }
 }

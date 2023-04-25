@@ -4,27 +4,31 @@ public class Question {
     private String possibleC;
     private String possibleB;
     private String answer;
+    private String wrong;
 
-    private boolean isAnswer;
-
-    public Question(String question, String possibleA, String possibleB, String possibleC, String answer){
+    public Question(String question, String possibleA, String possibleB, String possibleC, String answer,String wrong){
         setQuestion(question);
         setPossibleA(possibleA);
         setPossibleB(possibleB);
         setPossibleC(possibleC);
         setAnswer(answer);
+        setWrong(wrong);
 
     }
     public String getQuestion() {
-        return "question/n"+
-                "A."+ possibleA+"/n"+
-                "B."+ possibleB+"/n"+
-                "C."+ possibleC+"/n";
+        return "Question:\n"+question+"\n"+
+                "A."+ possibleA+"\n"+
+                "B."+ possibleB+"\n"+
+                "C."+ possibleC+"\n";
 
     }
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public void setWrong(String wrong) {
+        this.wrong = wrong;
     }
 
     public void setQuestion(String question) {
@@ -45,5 +49,9 @@ public class Question {
 
     public boolean isAnswer(String userAnswer) {
         return (userAnswer.equalsIgnoreCase(answer));
+    }
+
+    public boolean isWrong(String userAnswer) {
+        return (userAnswer.equalsIgnoreCase(wrong));
     }
 }
