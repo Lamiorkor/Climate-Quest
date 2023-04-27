@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Tropical extends Environment{
 
     /* This depicts a tropical monsoon climate
@@ -9,31 +11,27 @@ public class Tropical extends Environment{
     protected static final double avgTemp = 27.05; //in degree Celsius
     protected static final double avgWaterLevel = 3409.2; //in millimeters
 
-    private static final int numQuestions=14;
-
-    protected static final Question[] questionBank = new Question[numQuestions];
+    protected ArrayList<Question> questionBank;
 
     public Tropical() {
         super(environmentName, avgTemp, avgWaterLevel,numQuestions);
-        questionBank[0]=q0;
-        questionBank[1]=q1;
-        questionBank[2]=q2;
-        questionBank[3]=q3;
-        questionBank[4]=q4;
-        questionBank[5]=q5;
-        questionBank[6]=q6;
-        questionBank[7]=q7;
-        questionBank[8]=q8;
-        questionBank[9]=q9;
-        questionBank[10]=q10;
-        questionBank[11]=q11;
-        questionBank[12]=q12;
-        questionBank[13]=q13;
+        loadQuestions("TropicalQuestions.csv");
+        questionBank.add(q0);
+        questionBank.add(q1);
+        questionBank.add(q2);
+        questionBank.add(q3);
+        questionBank.add(q4);
+        questionBank.add(q5);
+        questionBank.add(q6);
+        questionBank.add(q7);
+        questionBank.add(q8);
+        questionBank.add(q9);
+        questionBank.add(q10);
+
     }
 
-
     public Question getQuestion(int index){
-        return questionBank[index];
+        return questionBank.get(index);
     }
 
     //Questions
