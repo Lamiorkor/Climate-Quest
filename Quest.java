@@ -90,6 +90,10 @@ public class Quest {
             System.out.println(question.getQuestion());
             Scanner scan = new Scanner(System.in);
             String Response = scan.next().toUpperCase();
+            while (!Response.equalsIgnoreCase("A") && !Response.equalsIgnoreCase("B") && !Response.equalsIgnoreCase("C") ){
+                 scan = new Scanner(System.in);
+                 Response = scan.next().toUpperCase();
+            }
             if (question.isAnswer(Response))
             {
                 this.addPoints(10);
