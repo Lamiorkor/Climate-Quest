@@ -1,30 +1,26 @@
 ## Welcome to Climate Quest🌍
-<p>
 Climate Quest is a text based game were users
 find themselves thrust in a world affected by climate
 change.
-</p>
-<p>Using their knowledge,players answer questions to survive
-as long as possible,<u>building their knowledge of climate change in the 
-process</u>.
-Can you survive long enough?</p>
+Using their knowledge,players answer questions to survive
+as long as possible,building their knowledge of climate change in the 
+process.
+Can you survive long enough?
 
-### Instructions
+Instructions
 - open your terminal
 - navigate to the folder containing the source files
-- run the command
-`javac *.java`
-to compile all your files
+- run the command `javac *.java` to compile all your files
 - run the command `java Quest` to launch the game
 - Follow in game instructions and enjoy!!
 
 
 ### Authors
-- _Ben Charles Abdul_
-- _Naa Lamiokor Boye_
-- _Laurik Sandrine_
+- Ben Charles Abdul
+- Naa Lamiokor Boye
+- Laurik Sandrine
 
-#### <u>Rules</u>
+#### Rules
 You have 5 environments to choose from,
 Each environment has its own unique questions
 For every question there is:
@@ -40,4 +36,4 @@ Use the corresponding letters to answer the questions
 
 `A` or `b` or `c` or `B` are all right answer inputs
                 
-Wrong inputs at any point will get you kicked from the game
+Wrong inputs at any point may get you kicked from the game
