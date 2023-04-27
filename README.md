@@ -21,8 +21,8 @@ to compile all your files
 
 ### Authors
 - _Ben Charles Abdul_
-- _Naa Lamiorkor Boye_
-- _Laurik Houngninou Ifede Sandrine_
+- _Naa Lamiokor Boye_
+- _Laurik Sandrine_
 
 #### <u>Rules</u>
 You have 5 environments to choose from,
@@ -32,7 +32,7 @@ For every question there is:
 - A neutral answer which gains you no points
 - A wrong answer which takes some health away
 
-Health can be regained by having a streak of 3 or more right answers...
+Health can be regained by having a streak of 3 or more characters...
 
 Can you survive the longest?
 
@@ -40,4 +40,4 @@ Use the corresponding letters to answer the questions
 
 `A` or `b` or `c` or `B` are all right answer inputs
                 
-Wrong inputs at any point will subtract from your health. Get to 0 health and you lose the game.
+Wrong inputs at any point will get you kicked from the game

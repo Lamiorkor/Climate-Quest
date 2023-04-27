@@ -1,7 +1,6 @@
 /**
  * A class representing the Quest game.
  */
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
@@ -93,6 +92,8 @@ public class Quest {
             while (!Response.equalsIgnoreCase("A") && !Response.equalsIgnoreCase("B") && !Response.equalsIgnoreCase("C") ){
                  scan = new Scanner(System.in);
                  Response = scan.next().toUpperCase();
+                if (Response.equalsIgnoreCase("exit"))
+                    System.exit(0);
             }
             if (question.isAnswer(Response))
             {
@@ -221,7 +222,7 @@ public class Quest {
         }
         } catch (InputMismatchException e)
         {
-            System.out.println("Error in Input..." + e.getMessage());
+            System.out.println("Error in Input.Requires integer input!");
         }
         System.out.println("End of Game");
         System.out.println("Score:" + totalScore);
