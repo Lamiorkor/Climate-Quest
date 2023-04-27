@@ -5,6 +5,7 @@
  */
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,20 +23,25 @@ public abstract class Environment {
         this.environmentName = environName;
         this.averageTemperature = avgTemp;
         this.averageWaterLevel = avgWaterLevel;
+        this.questionBank=new ArrayList<>();
     }
 
     public int getNumQuestions() {
         return questionBank.size();
     }
 
-    public void loadQuestions(String filename){
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            while (br.readLine()!=null)
-            {
-                String line = br.readLine();
-                if (line != null && !line.isEmpty()) {
+    public void loadQuestions(String filename) {
+        File file = new File(filename);
+        if (!file.exists() || file.isDirectory()) {
+            System.err.println("Error: question file not found , Using backup questions");
+            return;
+        }
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (!line.isEmpty()) {
                     String[] parts = line.split(",");
-                    Question question = new Question(parts[0],parts[1],parts[2],parts[3],parts[4],parts[5]);
+                    Question question = new Question(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
                     questionBank.add(question);
                 }
             }
@@ -45,6 +51,7 @@ public abstract class Environment {
             System.err.println("Error parsing number: " + e.getMessage());
         }
     }
+
     public String getEnvironmentName() {
         return environmentName;
     }
