@@ -80,7 +80,6 @@ public class Quest {
      */
     public int beginRound(Environment environment){
         int questionsLeft= environment.getNumQuestions();
-        ArrayList<Question> usedQuestions = new ArrayList<>();
         int bonusHealth=0;
         do
         {
@@ -99,8 +98,8 @@ public class Quest {
             }
             if (question.isWrong(Response))
             {
-                this.subtractHealth(50);
-                System.out.println("Wrong! -50 health");
+                this.subtractHealth(25);
+                System.out.println("Wrong! -25 health");
                 bonusHealth=0;
             }
             if (bonusHealth>=3){
