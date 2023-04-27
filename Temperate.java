@@ -9,10 +9,11 @@ public class Temperate extends Environment {
     protected static final double avgTemp = 10; //in degree Celsius
     protected static final double avgWaterLevel = 800; //in millimeters
 
-    protected ArrayList<Question> questionBank;
+    private ArrayList<Question> questionBank;
 
     public Temperate() {
-        super(environmentName, avgTemp, avgWaterLevel,numQuestions);
+        super(environmentName, avgTemp, avgWaterLevel);
+        questionBank=new ArrayList<>();
         loadQuestions("TemperateQuestions.csv");
         questionBank.add(q0);
         questionBank.add(q1);

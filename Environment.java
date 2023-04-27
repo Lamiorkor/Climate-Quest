@@ -15,16 +15,19 @@ public abstract class Environment {
     protected final String environmentName; //this entails the name of the environment
     protected final double averageTemperature;
     protected final double averageWaterLevel;
-    protected static int numQuestions;
     protected ArrayList<Question> questionBank;
 
-    public Environment(String environName, double avgTemp, double avgWaterLevel,int numQuestions) {
+    public Environment(String environName, double avgTemp, double avgWaterLevel) {
 
         this.environmentName = environName;
         this.averageTemperature = avgTemp;
         this.averageWaterLevel = avgWaterLevel;
-        Environment.numQuestions =numQuestions;
     }
+
+    public int getNumQuestions() {
+        return questionBank.size();
+    }
+
     public void loadQuestions(String filename){
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             while (br.readLine()!=null)
@@ -54,9 +57,7 @@ public abstract class Environment {
         return averageWaterLevel;
     }
 
-    public static int getNumQuestions() {
-        return numQuestions;
-    }
+
 
     public abstract Question getQuestion(int index);
 }

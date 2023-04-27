@@ -9,9 +9,10 @@ public class Tundra extends Environment{
     protected static final String environmentName = "Tundra";
     protected static final double avgTemp = (-13.25); //in degree Celsius
     protected static final double avgWaterLevel = 200; //in millimeters
-    protected ArrayList<Question> questionBank;
+    private ArrayList<Question> questionBank;
     public Tundra() {
-        super(environmentName, avgTemp, avgWaterLevel,numQuestions);
+        super(environmentName, avgTemp, avgWaterLevel);
+        questionBank=new ArrayList<>();
         loadQuestions("TundraQuestions.csv");
         questionBank.add(q0);
         questionBank.add(q1);

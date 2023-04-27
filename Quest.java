@@ -8,11 +8,9 @@ public class Quest {
 
     private int health;
 
-    private final Environment environment;
     public Quest ( Player player){
         this.score = 0;
         this.health = player.getHealth();
-        this.environment = player.getCurrentLocation();
     }
 
 
@@ -40,8 +38,8 @@ public class Quest {
         this.health += health;
     }
 
-    public int beginRound(){
-        int questionsLeft= Environment.getNumQuestions();
+    public int beginRound(Environment environment){
+        int questionsLeft= environment.getNumQuestions();
         ArrayList<Question> usedQuestions = new ArrayList<>();
         int bonusHealth=0;
         do
@@ -170,7 +168,7 @@ public class Quest {
                 System.out.println("Average Temperature(*C) : " +environment.getAverageTemperature());
                 System.out.println("Average WaterLevel(ml) : "+environment.getAverageWaterLevel()+"\n");
                 currentQuest = new Quest(currentPlayer);
-                totalScore += currentQuest.beginRound();
+                totalScore += currentQuest.beginRound(environment);
             }
             else
                break;

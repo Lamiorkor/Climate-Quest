@@ -12,9 +12,10 @@ public class Desert extends Environment {
     protected static final String environmentName = "Desert";
     protected static final double avgTemp = 18.75; //in degree Celsius
     protected static final double avgWaterLevel = 101.6; //in millimeters
-    protected ArrayList<Question> questionBank;
+    private final ArrayList<Question> questionBank;
     public Desert() {
-        super(environmentName, avgTemp, avgWaterLevel,numQuestions);
+        super(environmentName, avgTemp, avgWaterLevel);
+        questionBank=new ArrayList<>();
         loadQuestions("DesertQuestions.csv");
         questionBank.add(q0);
         questionBank.add(q1);
@@ -29,6 +30,7 @@ public class Desert extends Environment {
         questionBank.add(q10);
 
     }
+
 
     public Question getQuestion(int index){
         return questionBank.get(index);
@@ -58,12 +60,5 @@ public class Desert extends Environment {
             "Trains","Cars","Camels","C","A");
     final Question q10 = new Question("Which of these is essential for desert restoration",
             "Trains","Cars","Camels","C","A");
-    final Question q11 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q12 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q13 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-
 
 }

@@ -11,10 +11,11 @@ public class Tropical extends Environment{
     protected static final double avgTemp = 27.05; //in degree Celsius
     protected static final double avgWaterLevel = 3409.2; //in millimeters
 
-    protected ArrayList<Question> questionBank;
+    private ArrayList<Question> questionBank;
 
     public Tropical() {
-        super(environmentName, avgTemp, avgWaterLevel,numQuestions);
+        super(environmentName, avgTemp, avgWaterLevel);
+        questionBank=new ArrayList<>();
         loadQuestions("TropicalQuestions.csv");
         questionBank.add(q0);
         questionBank.add(q1);
@@ -57,11 +58,5 @@ public class Tropical extends Environment{
     final Question q9 = new Question("Which of these is essential for desert restoration",
             "Trains","Cars","Camels","C","A");
     final Question q10 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q11 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q12 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q13 = new Question("Which of these is essential for desert restoration",
             "Trains","Cars","Camels","C","A");
 }

@@ -9,10 +9,11 @@ public class Rainforest extends Environment {
     protected static final String environmentName = "Tropical Rainforest";
     protected static final double avgTemp = 25; //in degree Celsius
     protected static final double avgWaterLevel = 2150; //in millimeters
-    protected ArrayList<Question> questionBank;
+    private ArrayList<Question> questionBank;
 
     public Rainforest() {
-        super(environmentName, avgTemp, avgWaterLevel,numQuestions);
+        super(environmentName, avgTemp, avgWaterLevel);
+        questionBank=new ArrayList<>();
         loadQuestions("RainforestQuestions.csv");
         questionBank.add(q0);
         questionBank.add(q1);
