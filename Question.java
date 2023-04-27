@@ -22,7 +22,6 @@ public class Question {
                 "C."+ possibleC+"\n";
 
     }
-
     public void setAnswer(String answer) {
         this.answer = answer;
     }

@@ -7,27 +7,28 @@ public class Tropical extends Environment{
      * south and southeast Asia region.
      */
 
-    protected static final String environmentName = "Tropical Monsoon";
-    protected static final double avgTemp = 27.05; //in degree Celsius
-    protected static final double avgWaterLevel = 3409.2; //in millimeters
+    private static final String environmentName = "Tropical Monsoon";
+    private static final double avgTemp = 27.05; //in degree Celsius
+    private static final double rainfall = 3409.2; //in millimeters
 
     private ArrayList<Question> questionBank;
 
     public Tropical() {
-        super(environmentName, avgTemp, avgWaterLevel);
+        super(environmentName, avgTemp, rainfall);
         questionBank=new ArrayList<>();
-        loadQuestions("TropicalQuestions.csv");
-        questionBank.add(q0);
-        questionBank.add(q1);
-        questionBank.add(q2);
-        questionBank.add(q3);
-        questionBank.add(q4);
-        questionBank.add(q5);
-        questionBank.add(q6);
-        questionBank.add(q7);
-        questionBank.add(q8);
-        questionBank.add(q9);
-        questionBank.add(q10);
+        boolean load = loadQuestions("TropicalQuestions.csv");
+
+            questionBank.add(q0);
+            questionBank.add(q1);
+            questionBank.add(q2);
+            questionBank.add(q3);
+            questionBank.add(q4);
+            questionBank.add(q5);
+            questionBank.add(q6);
+            questionBank.add(q7);
+            questionBank.add(q8);
+            questionBank.add(q9);
+            questionBank.add(q10);
 
     }
 

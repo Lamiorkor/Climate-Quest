@@ -6,26 +6,26 @@ public class Rainforest extends Environment {
      * as found in West and Central Africa,
      * 
      */
-    protected static final String environmentName = "Tropical Rainforest";
-    protected static final double avgTemp = 25; //in degree Celsius
-    protected static final double avgWaterLevel = 2150; //in millimeters
+    private static final String environmentName = "Tropical Rainforest";
+    private static final double avgTemp = 25; //in degree Celsius
+    private static final double rainfall = 2150; //in millimeters
     private ArrayList<Question> questionBank;
 
     public Rainforest() {
-        super(environmentName, avgTemp, avgWaterLevel);
+        super(environmentName, avgTemp, rainfall);
         questionBank=new ArrayList<>();
-        loadQuestions("RainforestQuestions.csv");
-        questionBank.add(q0);
-        questionBank.add(q1);
-        questionBank.add(q2);
-        questionBank.add(q3);
-        questionBank.add(q4);
-        questionBank.add(q5);
-        questionBank.add(q6);
-        questionBank.add(q7);
-        questionBank.add(q8);
-        questionBank.add(q9);
-        questionBank.add(q10);
+        boolean load = loadQuestions("RainforestQuestions.csv");
+            questionBank.add(q0);
+            questionBank.add(q1);
+            questionBank.add(q2);
+            questionBank.add(q3);
+            questionBank.add(q4);
+            questionBank.add(q5);
+            questionBank.add(q6);
+            questionBank.add(q7);
+            questionBank.add(q8);
+            questionBank.add(q9);
+            questionBank.add(q10);
 
     }
 

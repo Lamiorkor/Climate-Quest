@@ -6,25 +6,25 @@ public class Tundra extends Environment{
      * located in the northern hemisphere
      */
 
-    protected static final String environmentName = "Tundra";
-    protected static final double avgTemp = (-13.25); //in degree Celsius
-    protected static final double avgWaterLevel = 200; //in millimeters
+    private static final String environmentName = "Tundra";
+    private static final double avgTemp = (-13.25); //in degree Celsius
+    private static final double rainfall = 200; //in millimeters
     private ArrayList<Question> questionBank;
     public Tundra() {
-        super(environmentName, avgTemp, avgWaterLevel);
+        super(environmentName, avgTemp, rainfall);
         questionBank=new ArrayList<>();
-        loadQuestions("TundraQuestions.csv");
-        questionBank.add(q0);
-        questionBank.add(q1);
-        questionBank.add(q2);
-        questionBank.add(q3);
-        questionBank.add(q4);
-        questionBank.add(q5);
-        questionBank.add(q6);
-        questionBank.add(q7);
-        questionBank.add(q8);
-        questionBank.add(q9);
-        questionBank.add(q10);
+        boolean load =loadQuestions("TundraQuestions.csv");
+            questionBank.add(q0);
+            questionBank.add(q1);
+            questionBank.add(q2);
+            questionBank.add(q3);
+            questionBank.add(q4);
+            questionBank.add(q5);
+            questionBank.add(q6);
+            questionBank.add(q7);
+            questionBank.add(q8);
+            questionBank.add(q9);
+            questionBank.add(q10);
 
     }
 

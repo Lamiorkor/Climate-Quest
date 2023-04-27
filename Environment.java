@@ -15,14 +15,14 @@ public abstract class Environment {
 
     protected final String environmentName; //this entails the name of the environment
     protected final double averageTemperature;
-    protected final double averageWaterLevel;
+    protected final double rainfall;
     protected ArrayList<Question> questionBank;
 
     public Environment(String environName, double avgTemp, double avgWaterLevel) {
 
         this.environmentName = environName;
         this.averageTemperature = avgTemp;
-        this.averageWaterLevel = avgWaterLevel;
+        this.rainfall = avgWaterLevel;
         this.questionBank=new ArrayList<>();
     }
 
@@ -30,13 +30,8 @@ public abstract class Environment {
         return questionBank.size();
     }
 
-    public void loadQuestions(String filename) {
-        File file = new File(filename);
-        if (!file.exists() || file.isDirectory()) {
-            System.err.println("Error: question file not found , Using backup questions");
-            return;
-        }
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+    public boolean loadQuestions(String filename) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {
                 if (!line.isEmpty()) {
@@ -47,9 +42,10 @@ public abstract class Environment {
             }
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
-        } catch (NumberFormatException e) {
-            System.err.println("Error parsing number: " + e.getMessage());
+            System.out.println("Loading Backup Questions");
+            return false;
         }
+        return true;
     }
 
     public String getEnvironmentName() {
@@ -60,8 +56,8 @@ public abstract class Environment {
         return averageTemperature;
     }
 
-    public double getAverageWaterLevel() {
-        return averageWaterLevel;
+    public double getrainfall() {
+        return rainfall;
     }
 
 

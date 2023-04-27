@@ -5,14 +5,14 @@ public class Temperate extends Environment {
     /* Temperate regions are found between the
      * Tropic of Cancer and Tropic of Capricorn
      */
-    protected static final String environmentName = "Temperate";
-    protected static final double avgTemp = 10; //in degree Celsius
-    protected static final double avgWaterLevel = 800; //in millimeters
+    private static final String environmentName = "Temperate";
+    private static final double avgTemp = 10; //in degree Celsius
+    private static final double rainfall = 800; //in millimeters
 
     private ArrayList<Question> questionBank;
 
     public Temperate() {
-        super(environmentName, avgTemp, avgWaterLevel);
+        super(environmentName, avgTemp, rainfall);
         questionBank=new ArrayList<>();
         loadQuestions("TemperateQuestions.csv");
         questionBank.add(q0);
