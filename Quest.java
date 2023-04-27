@@ -85,19 +85,9 @@ public class Quest {
         do
         {
             Question question;
-            do
-            {
-                Random r = new Random();
-                int index;
-                if (questionsLeft<=0){
-                    index = r.nextInt(0, 9);
-                }
-                else {
-                    index = r.nextInt(0, questionsLeft);
-                }
-                question = environment.getQuestion(index);
-            } while (usedQuestions.contains(question));
-            usedQuestions.add(question);
+            Random r = new Random();
+            int index = r.nextInt(0, questionsLeft);
+            question = environment.getQuestion(index);
             System.out.println(question.getQuestion());
             Scanner scan = new Scanner(System.in);
             String Response = scan.next().toUpperCase();

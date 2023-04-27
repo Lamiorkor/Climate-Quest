@@ -14,7 +14,6 @@ public class Temperate extends Environment {
     public Temperate() {
         super(environmentName, avgTemp, rainfall);
         questionBank=new ArrayList<>();
-        loadQuestions("TemperateQuestions.csv");
         questionBank.add(q0);
         questionBank.add(q1);
         questionBank.add(q2);
@@ -26,6 +25,7 @@ public class Temperate extends Environment {
         questionBank.add(q8);
         questionBank.add(q9);
         questionBank.add(q10);
+        loadQuestions("TemperateQuestions.csv");
 
     }
 

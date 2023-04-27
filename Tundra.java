@@ -13,18 +13,19 @@ public class Tundra extends Environment{
     public Tundra() {
         super(environmentName, avgTemp, rainfall);
         questionBank=new ArrayList<>();
-        boolean load =loadQuestions("TundraQuestions.csv");
-            questionBank.add(q0);
-            questionBank.add(q1);
-            questionBank.add(q2);
-            questionBank.add(q3);
-            questionBank.add(q4);
-            questionBank.add(q5);
-            questionBank.add(q6);
-            questionBank.add(q7);
-            questionBank.add(q8);
-            questionBank.add(q9);
-            questionBank.add(q10);
+
+        questionBank.add(q0);
+        questionBank.add(q1);
+        questionBank.add(q2);
+        questionBank.add(q3);
+        questionBank.add(q4);
+        questionBank.add(q5);
+        questionBank.add(q6);
+        questionBank.add(q7);
+        questionBank.add(q8);
+        questionBank.add(q9);
+        questionBank.add(q10);
+        loadQuestions("TundraQuestions.csv");
 
     }
 
