@@ -2,7 +2,6 @@
  * A class representing the Quest game.
  */
 import java.util.InputMismatchException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Quest {
@@ -79,13 +78,11 @@ public class Quest {
      */
     public int beginRound(Environment environment){
         int questionsLeft= environment.getNumQuestions();
+        int index=0;
         int bonusHealth=0;
         do
         {
-            Question question;
-            Random r = new Random();
-            int index = r.nextInt(0, questionsLeft);
-            question = environment.getQuestion(index);
+            Question question = environment.getQuestion(index);
             System.out.println(question.getQuestion());
             Scanner scan = new Scanner(System.in);
             String Response = scan.next().toUpperCase();
@@ -100,13 +97,13 @@ public class Quest {
                 this.addPoints(10);
                 bonusHealth++;
                 System.out.println("Correct ! +10 points");
-            }
-            if (question.isWrong(Response))
+            } else if (question.isWrong(Response))
             {
                 this.subtractHealth(25);
                 System.out.println("Wrong! -25 health");
                 bonusHealth=0;
-            }
+            }else
+                System.out.println("Wrong! no points...");
             if (bonusHealth>=3){
                 addHealth(15);
                 System.out.println("Bonus Health Added! +15 health ");
@@ -114,8 +111,8 @@ public class Quest {
             System.out.println("--------------------");
             System.out.println("Health Remaining:" + getHealth());
             System.out.println("\n");
-            questionsLeft--;
-        }while(questionsLeft != 0 && !(Player.outOfHealth(health)));
+            index++;
+        }while(questionsLeft != index && !(Player.outOfHealth(health)));
         numberOfRounds++;
         System.out.println("-------END-OF-ROUND------");
         System.out.println("Score:" + getScore());

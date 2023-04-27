@@ -3,61 +3,42 @@ import java.util.ArrayList;
 public class Desert extends Environment {
 
 
-    /*This details the characteristics of 
-    * the Sahara desert, which is a 
-    * Hot and Dry desert
-    */
+    /*This details the characteristics of
+     * the Sahara desert, which is a
+     * Hot and Dry desert
+     */
 
 
     private static final String environmentName = "Desert";
     private static final double avgTemp = 18.75; //in degree Celsius
     private static final double rainfall = 101.6; //in millimeters
     private final ArrayList<Question> questionBank;
+
     public Desert() {
         super(environmentName, avgTemp, rainfall);
-        questionBank=new ArrayList<>();
+        questionBank = new ArrayList<>();
+        loadQuestions("DesertQuestions.csv");
         questionBank.add(q0);
         questionBank.add(q1);
         questionBank.add(q2);
         questionBank.add(q3);
-        questionBank.add(q4);
-        questionBank.add(q5);
-        questionBank.add(q6);
-        questionBank.add(q7);
-        questionBank.add(q8);
-        questionBank.add(q9);
-        questionBank.add(q10);
-        loadQuestions("DesertQuestions.csv");
+
+
     }
 
 
-    public Question getQuestion(int index){
+    public Question getQuestion(int index) {
         return questionBank.get(index);
     }
 
-    //Questions
+    //Questions Backup
     final Question q0 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
+            "Trains", "Cars", "Camels", "C", "A");
 
     final Question q1 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
+            "Trains", "Cars", "Camels", "C", "A");
     final Question q2 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
+            "Trains", "Cars", "Camels", "C", "A");
     final Question q3 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q4 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q5 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q6 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q7 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q8 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q9 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-    final Question q10 = new Question("Which of these is essential for desert restoration",
-            "Trains","Cars","Camels","C","A");
-
+            "Trains", "Cars", "Camels", "C", "A");
 }

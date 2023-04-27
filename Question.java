@@ -1,8 +1,10 @@
 public class Question {
     private String question;
     private String possibleA;
-    private String possibleC;
     private String possibleB;
+    private String possibleC;
+
+
     private String answer;
     private String wrong;
 
